@@ -5,6 +5,7 @@ void main() {
   runApp(const MyApp());
 }
 
+//option+ctrl+shift+b json to model hiratha shortcut
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

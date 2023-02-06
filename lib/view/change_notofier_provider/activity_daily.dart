@@ -2,6 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:learn_stream_builder/models/activity.dart';
+import 'package:learn_stream_builder/view/products_view/products_view.dart';
+import 'package:learn_stream_builder/view/single_user_view/single_user_view.dart';
+import 'package:learn_stream_builder/view/statefulbuilder/my_stateful_builder.dart';
+import 'package:learn_stream_builder/view/statefulbuilder/tanpa_stateful_builder.dart';
+import 'package:learn_stream_builder/view/users_view/users_view.dart';
 import 'package:provider/provider.dart';
 
 List<String> fruit = ['badminton', 'swimming', 'futsal'];
@@ -38,13 +43,86 @@ class ActivityDaily extends StatelessWidget {
           )
         ],
       ),
-      floatingActionButton: ElevatedButton.icon(
-        icon: const Icon(Icons.add),
-        label: const Text("Add Activity"),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blueGrey,
-        ),
-        onPressed: () {},
+      floatingActionButton: Wrap(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton.icon(
+                icon: const Icon(Icons.add),
+                label: const Text("List Product"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueGrey,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ProductsView(),
+                      ));
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.add),
+                label: const Text("Single"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SingleUserView(),
+                      ));
+                },
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.add),
+                label: const Text("Users"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const UsersView(),
+                      ));
+                },
+              ),
+            ],
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            ElevatedButton.icon(
+              icon: const Icon(Icons.next_week),
+              label: const Text("Tanpa Stateful Builder"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueGrey,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const TanpaStateFulBuilder(),
+                    ));
+              },
+            ),
+            ElevatedButton.icon(
+              icon: const Icon(Icons.next_week),
+              label: const Text("Stateful Builder"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueGrey,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyStatefulBuilder(),
+                    ));
+              },
+            ),
+          ]),
+        ],
       ),
       body: Center(
         child: Column(
