@@ -2,6 +2,18 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
+Widget showSplitku(String newNoAsuransi) {
+  List<String> parts = newNoAsuransi.split(RegExp(r'\D+'));
+  String penampung = '';
+  for (var part in parts) {
+    penampung += '$part\n';
+  }
+  return Text(
+    penampung,
+    style: const TextStyle(fontSize: 30, color: Colors.green),
+  );
+}
+
 Widget makingMark() {
   log('------------');
   return Container();

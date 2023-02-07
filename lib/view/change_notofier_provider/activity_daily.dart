@@ -6,8 +6,11 @@ import 'package:learn_stream_builder/view/products_view/products_view.dart';
 import 'package:learn_stream_builder/view/single_user_view/single_user_view.dart';
 import 'package:learn_stream_builder/view/statefulbuilder/my_stateful_builder.dart';
 import 'package:learn_stream_builder/view/statefulbuilder/tanpa_stateful_builder.dart';
+import 'package:learn_stream_builder/view/user_regres/user_regres.dart';
 import 'package:learn_stream_builder/view/users_view/users_view.dart';
 import 'package:provider/provider.dart';
+
+import '../user_regres/user_regres_stateless.dart';
 
 List<String> fruit = ['badminton', 'swimming', 'futsal'];
 
@@ -118,6 +121,36 @@ class ActivityDaily extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const MyStatefulBuilder(),
+                    ));
+              },
+            ),
+          ]),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            ElevatedButton.icon(
+              icon: const Icon(Icons.next_week),
+              label: const Text("Regres"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueGrey,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UserRegres(),
+                    ));
+              },
+            ),
+            ElevatedButton.icon(
+              icon: const Icon(Icons.next_week),
+              label: const Text("Regres Less"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueGrey,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UserRegresStateless(),
                     ));
               },
             ),
