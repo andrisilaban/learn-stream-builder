@@ -1,6 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:learn_stream_builder/view/statefulbuilder/public_methods.dart';
 
+
+
+class Example extends StatefulWidget {
+  const Example({Key? key}) : super(key: key);
+
+  @override
+  State<Example> createState() => _ExampleState();
+}
+
+class _ExampleState extends State<Example> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
 class MyStatefulBuilder extends StatelessWidget {
   const MyStatefulBuilder({super.key});
 

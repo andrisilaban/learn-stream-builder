@@ -32,6 +32,7 @@ class _HomeNavState extends State<HomeNav> {
                 icon: const Icon(
                   Icons.refresh,
                   size: 24.0,
+                  color: Colors.white,
                 ),
               ),
               IconButton(
@@ -45,6 +46,7 @@ class _HomeNavState extends State<HomeNav> {
                 icon: const Icon(
                   Icons.navigate_next_sharp,
                   size: 24.0,
+                  color: Colors.white,
                 ),
               ),
             ],
